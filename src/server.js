@@ -1,7 +1,17 @@
 import express from 'express';
+import rateLimit from 'express-rate-limit';
 
 const app = express()
 const port = 3000
+
+// Set up rate limiter: maximum of 100 requests per 15 minutes
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // max 100 requests per windowMs
+});
+
+// Apply rate limiter to all requests
+app.use(limiter);
 
 app.get('/', (req, res) => {
   res.sendFile('index.html', { 'root': 'src' });
@@ -40,5 +50,6 @@ app.get('/fibonacci/:number', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app listening on port ${port}`);
+  console.log('Rate limiting enabled: max 100 requests per 15 minutes.');
 });
