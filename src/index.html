@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fibonacci</title>>
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" type="module"></script>
+</head>
+<body>
+  <h1>Fibonacci</h1>
+
+  <section>
+    <label for="fib-input">Enter a number:</label>
+    <input type="number" id="fib-input" min="0" step="1" required>
+    <label for="fib-mode">Mode:</label>
+    <select id="fib-mode" required>
+      <option value="worker">Worker</option>
+      <option value="main-thread">Main Thread</option>
+      <option value="server">Server</option>
+    </select>
+    <br /><br />
+    <button id="fib-submit">Compute</button>
+    <br><br>
+    <label for="fib-result">Result:</label>
+    <textarea id="fib-result" rows="2" cols="30" disabled></textarea>
+  </section>
+</body>
+</html>

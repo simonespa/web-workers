@@ -1,0 +1,26 @@
+{
+  "name": "web-workers",
+  "version": "1.0.0",
+  "description": "Web Workers playground",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonespa/web-workers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simonespa/web-workers/issues"
+  },
+  "homepage": "https://github.com/simonespa/web-workers#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
