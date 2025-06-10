@@ -10,6 +10,8 @@ const limiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
 });
 
+app.use(limiter)
+
 app.get("/", (req, res) => {
   res.sendFile("index.html", { root: "src" });
 });
@@ -30,7 +32,7 @@ app.get("/fibonacci-worker.js", (req, res) => {
   res.sendFile("fibonacci-worker.js", { root: "src" });
 });
 
-app.get("/fibonacci/:number", limiter, async (req, res) => {
+app.get("/fibonacci/:number", async (req, res) => {
   const fibonacci = (await import("./fibonacci.js")).default;
 
   const number = parseInt(req.params.number, 10);
