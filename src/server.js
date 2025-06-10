@@ -6,7 +6,7 @@ const port = 3000;
 
 // Set up rate limiter: maximum of 100 requests per 15 minutes
 const limiter = rateLimit({
-  max: 3, // max requests per windowMs
+  max: 100, // max requests per windowMs
   windowMs: 1 * 60 * 1000, // 1 minute
 });
 
